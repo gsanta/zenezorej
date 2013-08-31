@@ -1,5 +1,23 @@
 {% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#news-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+ 	</style>
+{% endblock %}
 
 {% block body %}
 
@@ -9,12 +27,10 @@
 
 		{% for row in news %}
         	<div class="col-lg-6 news-item">
-				<p>
-					<a href="/index.php?/rendezvenyek">
-						{{ row.date|date("Y. M d.") }} <br><br> 
-						{{ row.content }}
-					</a>
-				</p>
+        		<div class="news-content">
+					{{ row.date|date("Y. M d.") }} <br>
+					{{ row.content }}
+				</div>
 			</div>
     	{% endfor %}
 	</div>

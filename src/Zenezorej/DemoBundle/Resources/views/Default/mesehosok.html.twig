@@ -1,0 +1,36 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="row-fluid">
+		<p>
+			Bemutatjuk a mássalhangzók tanításához életrehívott mesehősöket, 3 mese teljes szövegével (a gyermekrajzokat a Herman Ottó Általános Iskola tanulói készítették).
+
+			<div class="col-lg-6">
+					
+			</div>
+		</p>
+	</div>
+</div>
+
+{% endblock %}
