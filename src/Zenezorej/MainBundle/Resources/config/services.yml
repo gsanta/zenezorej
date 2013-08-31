@@ -1,0 +1,7 @@
+parameters:
+#    zenezorej_main.example.class: Zenezorej\MainBundle\Example
+
+services:
+#    zenezorej_main.example:
+#        class: %zenezorej_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

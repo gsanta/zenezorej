@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html>  
+	<head>  
+    	<title>Fixed layout example with Twitter Bootstrap</title>  
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    	<!-- Bootstrap -->  
+    	<link type="text/css" href="{{ asset('bundles/zenezorejbase/css/bootstrap.min.css') }}" rel="stylesheet">
+    	<link type="text/css" href="{{ asset('bundles/zenezorejbase/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+    	<link  type="text/css" href="{{ asset('bundles/zenezorejbase/css/common.css') }}" rel="stylesheet">
+    	<style>
+
+    		#news-content {
+
+    			padding: 1em;
+    			max-width: 1000px;
+    			margin: 0 auto;
+    		}
+
+    		.news-item {
+    			color: black;
+    			
+    		}
+     	</style>
+	</head>  
+  	<body>  
+
+  		<div class="row nav-row" >
+			<ul class="nav">
+				<li class="active col-lg-1 col-offset-1 first"><a href="index.html">Főoldal</a></li>
+				<li class="col-lg-1 second"><a href="{{ path('philosophy_homepage') }}">Filozófia</a></li>
+				<li class="col-lg-1 third"><a href="demo.html">Demó</a></li>
+				<li class="col-lg-1 fourth"><a href="#">Zörej Tv</a></li>
+				<li class="col-lg-1 fifth"><a href="#">Publikációk</a></li>
+				<li class="col-lg-1 sixth"><a href="#">Vendégszoba</a></li>
+				<li class="col-lg-1 seventh"><a href="#">Óvodai&nbsp;program</a></li>
+				<li class="col-lg-1 eight"><a href="#">Rendezvények</a></li>
+				<li class="col-lg-1 ninth"><a href="#">Köszönet</a></li>
+				<li class="col-lg-1 tenth"><a href="#">Kapcsolat</a></li>
+			</ul>
+		</div>
+
+  		{% block body %}
+
+  		{% endblock %}
+
+	  	<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
+		<script>
+
+		</script>
+	</body>  
+</html>  

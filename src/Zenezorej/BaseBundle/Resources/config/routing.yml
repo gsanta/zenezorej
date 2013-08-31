@@ -1,0 +1,3 @@
+zenezorej_test_base:
+    pattern:  /test
+    defaults: { _controller: ZenezorejBaseBundle:Default:index }

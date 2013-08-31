@@ -1,0 +1,7 @@
+parameters:
+#    zenezorej_philosophy.example.class: Zenezorej\PhilosophyBundle\Example
+
+services:
+#    zenezorej_philosophy.example:
+#        class: %zenezorej_philosophy.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

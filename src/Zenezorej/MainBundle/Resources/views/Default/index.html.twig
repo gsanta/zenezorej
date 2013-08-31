@@ -1,0 +1,24 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+
+{% block body %}
+
+
+<div class="row main-content" id="first-page">
+	<div class="row-fluid" id="news-content">
+
+		{% for row in news %}
+        	<div class="col-lg-6 news-item">
+				<p>
+					<a href="/index.php?/rendezvenyek">
+						{{ row.date|date("Y. M d.") }} <br><br> 
+						{{ row.content }}
+					</a>
+				</p>
+			</div>
+    	{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}

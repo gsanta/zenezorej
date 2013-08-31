@@ -1,0 +1,3 @@
+zenezorej_main_homepage:
+    pattern:  /
+    defaults: { _controller: ZenezorejMainBundle:Default:index }

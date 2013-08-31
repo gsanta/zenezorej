@@ -1,0 +1,12 @@
+zenezorej_philosophy:
+    resource: "@ZenezorejPhilosophyBundle/Resources/config/routing.yml"
+    prefix:   /
+
+zenezorej_main:
+    resource: "@ZenezorejMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+zenezorej_base:
+    resource: "@ZenezorejBaseBundle/Resources/config/routing.yml"
+    prefix:   /
+
