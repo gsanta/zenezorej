@@ -1,9 +1,23 @@
 {% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+ 	</style>
+{% endblock %}
 
 {% block body %}
 
-<div class="row main-content" id="second-page">
+<div class="row" id="main-content">
 	<div class="hero-unit">
 		<h2>Filozófia</h2>
 	    

@@ -8,10 +8,15 @@
 
       {% block stylesheets %}
 
-    	<link type="text/css" href="{{ asset('bundles/zenezorejbase/css/bootstrap.min.css') }}" rel="stylesheet">
-    	<link type="text/css" href="{{ asset('bundles/zenezorejbase/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-    	<link  type="text/css" href="{{ asset('bundles/zenezorejbase/css/common.css') }}" rel="stylesheet">
+        {% stylesheets  'bundles/zenezorejbase/css/bootstrap.min.css' 
+                        'bundles/zenezorejbase/css/bootstrap-responsive.min.css'
+                        'bundles/zenezorejbase/css/lightbox.css'
+                        'bundles/zenezorejbase/css/common.css'
+                                                    filter='cssrewrite' %}
 
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            
+        {% endstylesheets %}
       {% endblock %}
     	
 	</head>  
@@ -19,10 +24,10 @@
 
   		<div class="row nav-row" >
 			<ul class="nav">
-				<li class="active col-lg-1 col-offset-1 first"><a href="index.html">Főoldal</a></li>
+				<li class="active col-lg-1 col-offset-1 first"><a href="{{ path('main_homepage') }}">Főoldal</a></li>
 				<li class="col-lg-1 second"><a href="{{ path('philosophy_homepage') }}">Filozófia</a></li>
-				<li class="col-lg-1 third"><a href="demo.html">Demó</a></li>
-				<li class="col-lg-1 fourth"><a href="#">Zörej Tv</a></li>
+				<li class="col-lg-1 third"><a href="{{ path('demo_homepage') }}">Demó</a></li>
+				<li class="col-lg-1 fourth"><a href="{{ path('zorej_tv_homepage') }}">Zörej Tv</a></li>
 				<li class="col-lg-1 fifth"><a href="#">Publikációk</a></li>
 				<li class="col-lg-1 sixth"><a href="#">Vendégszoba</a></li>
 				<li class="col-lg-1 seventh"><a href="#">Óvodai&nbsp;program</a></li>
@@ -36,10 +41,11 @@
 
   		{% endblock %}
 
-	  	<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
-		<script>
+      {% block javascripts %}
 
-		</script>
+	  	<script src="http://code.jquery.com/jquery.js"></script>
+		  <script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
+	    <script src="{{ asset('bundles/zenezorejbase/js/lightbox-2.6.min.js') }}"></script>  
+      {% endblock %}
 	</body>  
 </html>  

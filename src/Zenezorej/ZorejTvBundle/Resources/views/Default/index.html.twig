@@ -1,0 +1,22 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="row-fluid" id="news-content">
+
+		{% for row in videos %}
+        	<div class="col-lg-6">
+					{{ row.description }}
+			</div>
+    	{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}

@@ -9,12 +9,12 @@ class DefaultController extends Controller
 {
     public function indexAction() {
 
-    	$news = $this->fetchNews();
+    	$news = $this->fetchAllNews();
 
         return $this->render('ZenezorejMainBundle:Default:index.html.twig', array("news" => $news));
     }
 
-    private function fetchNews() {
+    private function fetchAllNews() {
 
 	    $news = $this->getDoctrine()
 	        ->getRepository('ZenezorejMainBundle:News')
