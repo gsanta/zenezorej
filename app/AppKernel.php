@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Zenezorej\PhilosophyBundle\ZenezorejPhilosophyBundle(),
             new Zenezorej\DemoBundle\ZenezorejDemoBundle(),
             new Zenezorej\ZorejTvBundle\ZenezorejZorejTvBundle(),
+            new Zenezorej\EventsBundle\ZenezorejEventsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

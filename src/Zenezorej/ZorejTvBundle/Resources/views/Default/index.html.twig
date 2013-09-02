@@ -2,7 +2,24 @@
 
 {% block stylesheets %}
 	{{ parent() }}
+
+	<style>
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+	</style>
 	
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		Shadowbox.init();
+	</script>
 {% endblock %}
 
 {% block body %}
@@ -11,10 +28,24 @@
 	<div class="row-fluid" id="news-content">
 
 		{% for row in videos %}
-        	<div class="col-lg-6">
-					{{ row.description }}
+			{% if loop.index0 % 2 == 1 %}
+			
+			<div class="media col-sm-5 offset1">
+			
+			{% else %}
+
+			<div class="media col-sm-5">
+
+			{% endif %}
+	  			<a class="pull-left" rel="shadowbox[Videos];width=405;height=340" title="Ebon Coast" href="{{ row.url }}">
+					<img src="{{ asset('bundles/zenezorejzorejtv/img/channel_'~ row.channelId ~'/'~ row.picId ~'.jpg') }}"/>  			
+				</a>
+	  			<div class="media-body">
+	    			<h4 class="media-heading">{{ row.description }}</h4>
+	  			</div>
 			</div>
-    	{% endfor %}
+		{% endfor %}
+		
 	</div>
 
 </div>

@@ -1,3 +1,7 @@
+zenezorej_events:
+    resource: "@ZenezorejEventsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zenezorej_zorej_tv:
     resource: "@ZenezorejZorejTvBundle/Resources/config/routing.yml"
     prefix:   /

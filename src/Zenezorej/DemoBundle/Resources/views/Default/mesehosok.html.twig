@@ -58,6 +58,14 @@
 
 {% endblock %}
 
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		Shadowbox.init();
+	</script>
+{% endblock %}
+
 {% block body %}
 
 <div class="row" id="main-content">
@@ -69,7 +77,7 @@
 				<div class="col-sm-5 item-mesehos">
 						Medve Ede, Sihu Huba, Au Tóni (m,s,t)
 						
-						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst_big.jpg') }}" data-lightbox="image-1" title="Medve Ede, Sihu Huba, Au Tóni (m,s,t)">
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Medve Ede, Sihu Huba, Au Tóni (m,s,t)">
 							<img style="" src="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst.jpg') }}"/>
 						</a>
 					
@@ -77,104 +85,104 @@
 
 				<div class="col-sm-5 offset1 item-mesehos">
 						Vau Vali (v)
-						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/v_big.jpg') }}" data-lightbox="image-1" title="Vau Vali (v)">
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/v_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Vau Vali (v)">
 							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/v.jpg') }}"/>
 						</a>
 				</div>
 
 				<div class="col-sm-5 item-mesehos">
 						Pipa Pista (p)
-						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/p_big.jpg') }}" data-lightbox="image-1" title="Pipa Pista (p)">
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/p_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Pipa Pista (p)">
 							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/p.jpg') }}"/>
 						</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Cincin Vezér (c)
-						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/c_big.jpg') }}" data-lightbox="image-1" title="Cincin Vezér (c)">
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/c_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Cincin Vezér (c)">
 							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/c.jpg') }}"/>
 						</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Kakas Lovag (k)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/k_big.jpg') }}" data-lightbox="image-1" title="Kakas Lovag (k)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/k_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Kakas Lovag (k)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/k.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Lágy Szellő (f)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/f_big.jpg') }}" data-lightbox="image-1" title="Lágy Szellő (f)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/f_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Lágy Szellő (f)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/f.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Meleg Lehelet (h)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/h_big.jpg') }}" data-lightbox="image-1" title="Meleg Lehelet (h)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/h_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Meleg Lehelet (h)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/h.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Zim Züm (z)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/z_big.jpg') }}" data-lightbox="image-1" title="Zim Züm (z)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/z_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Zim Züm (z)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/z.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Dr. Dibi Dob (d)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/d_big.jpg') }}" data-lightbox="image-1" title="Dr. Dibi Dob (d)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/d_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Dr. Dibi Dob (d)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/d.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Pinokkió (j)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/j_big.jpg') }}" data-lightbox="image-1" title="Pinokkió (j)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/j_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Pinokkió (j)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/j.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Nénó Zénó (n)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/n_big.jpg') }}" data-lightbox="image-1" title="Nénó Zénó (n)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/n_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Nénó Zénó (n)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/n.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Kígyó Sziszi (sz)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz_big.jpg') }}" data-lightbox="image-1" title="Kígyó Sziszi (sz)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Kígyó Sziszi (sz)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Gág Ági (g)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/g_big.jpg') }}" data-lightbox="image-1" title="Gág Ági (g)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/g_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Gág Ági (g)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/g.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Moto Rozi (r)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/r_big.jpg') }}" data-lightbox="image-1" title="Moto Rozi (r)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/r_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Moto Rozi (r)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/r.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Bubo Réka (b)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/b_big.jpg') }}" data-lightbox="image-1" title="Bubo Réka (b)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/b_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Bubo Réka (b)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/b.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Gy, a hintapaci (gy) 
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy_big.jpg') }}" data-lightbox="image-1" title="Gy, a hintapaci (gy)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Gy, a hintapaci (gy)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 item-mesehos">
 						Csibe Csabi (cs)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs_big.jpg') }}" data-lightbox="image-1" title="Csibe Csabi (cs)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Csibe Csabi (cs)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs.jpg') }}"/>
 					</a>
 				</div>
 				<div class="col-sm-5 offset1 item-mesehos">
 						Nyau Cili (ny)
-					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny_big.jpg') }}" data-lightbox="image-1" title="Nyau Cili (ny)">
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Nyau Cili (ny)">
 						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny.jpg') }}"/>
 					</a>
 				</div>
