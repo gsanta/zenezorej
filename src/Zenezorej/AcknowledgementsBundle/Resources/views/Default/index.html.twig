@@ -1,0 +1,50 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="hero-unit">
+		<p> Köszönjük munkájukat karmestereinknek: </p>
+
+		<p>
+			Andrékó Tünde, Bartos Zoltánné, Farkas Diána, Galambosné Fejér Gabriella, Gödör Ágnes, Keksz Ernőné, Knesziné Tóth Ilona, Kuizsné Virág Edina, Lévai Zsófia, Nagy Adél, Nagy Judit, Pásztorniczkiné Kelemen Anna, Söjtöry Andrea, Szerzőné Fiedler Mónika, Takács Annamária, Török Csilla, Újváriné Sípos Katalin, Villásiné Istók Bea, Vitai Anikó.
+		</p>
+
+		<p>
+			Köszönjük azoknak, akik szavaikkal segítettek minket:
+		</p>
+
+		<p>
+			Bártfai Barbara, Fehérné Kovács Zsuzsa, Höflerné Pénzes Éva, Salné dr. Lengyel Mária, Sósné Pintye Mária, Turcsik Kata, Turcsik Viktor, Vekerdy Tamás.
+		</p>
+
+		<p>
+			Köszönjük azoknak, akik kreatív energiájukkal támogattak minket:
+		</p>
+
+		<p>
+			Keksz Ernő, Sánta Gergely, Ványi Zoltán, Nagy Gergő, Kollektív Zeneműhely tanári kar (Lee Olivér, Sánta Kristóf, Szontagh Gusztáv).
+		</p>
+
+		<p>
+			Köszönjük továbbá minden elsős mosolyát, kacaját, elkerekedő szemét, lendülő karját, dobbanó lábát, a rengeteg zajt, zörejt, a fantasztikus mozdulatokat. Köszönjük a csodát, ami ők maguk voltak.
+		</p>
+	</div>
+</div>
+
+{% endblock %}

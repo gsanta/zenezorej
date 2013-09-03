@@ -1,0 +1,3 @@
+publications_homepage:
+    pattern:  /publikaciok
+    defaults: { _controller: ZenezorejPublicationsBundle:Default:index }

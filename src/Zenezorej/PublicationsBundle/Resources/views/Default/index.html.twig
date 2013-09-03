@@ -11,24 +11,33 @@
 			margin: 0 auto;
 		}
 
-		#events-content {
+		#publications-content {
 
 			padding: 1em;
 			max-width: 1000px;
 			margin: 0 auto;
 		}
 
-		.event-item {
+		.publication-item {
 			color: black;
 			padding: 0.5em;
 			margin-bottom: 0.5em;
 		}
 
-		.event-content {
+		.publication-content {
 			background: #a692a7;
-			padding: 0.2em;
+			padding: 0.5em;
 			-webkit-box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
 			box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
+		}
+
+		.highlight-basic {
+			font-weight: bold;
+		}
+
+		.highlight-center {
+			font-weight: bold;
+			text-align: center;
 		}
 	</style>
 	
@@ -37,13 +46,17 @@
 {% block body %}
 
 <div class="row" id="main-content">
-	<div class="row-fluid" id="events-content">
+	<div class="row-fluid" id="publications-content">
 
-		{% for row in events %}
-        	<div class="col-sm-6 event-item">
-        		<div class="event-content">
-					<div> {{ row.startDate|date("Y. M d.") }} </div>
-					<div> {{ row.content|raw }} </div>
+		{% for row in publications %}
+        	<div class="col-sm-6 publication-item">
+        		<div class="publication-content">
+					<div class="highlight-center"> {{ row.authors }} </div>
+					<div> {{ row.title }} </div>
+
+					{% if row.publisher|trim != "" %}
+					    <div style="font-style:italic"> {{ row.publisher }} </div>
+					{% endif %}
 				</div>
 			</div>
     	{% endfor %}

@@ -1,0 +1,7 @@
+parameters:
+#    zenezorej_publications.example.class: Zenezorej\PublicationsBundle\Example
+
+services:
+#    zenezorej_publications.example:
+#        class: %zenezorej_publications.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
