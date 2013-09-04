@@ -1,0 +1,94 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="hero-unit">
+		<h2>HANGULATMESÉK</h2>
+
+		<h3>
+			„HANGOS” - KÖNYV ÓVODÁSOKNAK AZ OLVASÁS MESÉS ELŐKÉSZÍTÉSÉRE
+			Társszerzőnk: Sándor Krisztina - pszichopedagógus
+		</h3>
+
+		<p>
+			Koncepciónk: a gyermekek kb. fele valamilyen szintű „betűélménnyel” érkezik az iskolába (széles a skála: az értő olvasástól a néhány betűt ismeretéig). Másik felük számára valamilyen okból még nem nyílt meg az írásbeliség világa, ami nem is baj, hiszen az iskola hivatott kaput nyitni erre a világra.
+		</p>
+
+		<p>
+			A logopédusok és a fejlesztő pedagógusok általános tapasztalata azonban az, hogy az iskola egy- egy osztály haladását a jobban működő gyermekekhez igazítja. Így a betűre még nem érett gyerek meglehetősen méltatlan helyzetbe kerülhet, mintha szégyellnie kellene azt, hogy 6-7 évesen ő még nem olvas.
+		</p>
+
+		<p>
+			Szándékoltan ezeknek a gyermekeknek készítjük az óvodai körülmények között is játszható/megélhető mesekönyvünket. Mégpedig azzal a céllal, hogy a gyermekek számára az ebben az életkorban még túl absztraktnak ható beszédhangok percepciójára játékban érzékenyítsük őket. Ha elérjük azt, hogy a mese szövege hatására egy lufi színe vagy a hozzá tartozó emberi érzelem előcsal a gyermekből egy beszédhangot, akkor a betűtanítás hármas asszociációjának igen nehéz feladatát oldottuk meg anélkül, hogy a betű grafikusan megjelent volna az óvodai szobában.
+		</p>
+
+		<p>
+			És ha két játéktárgyunk hangja a mese élményében egyetlen akusztikus egységet alkotva tud megjelenni a gyermekekben, akkor a legnagyobb absztrakciót igénylő olvasástanulási állomáshoz, az összeolvasáshoz érhetünk oda megint csak anélkül, hogy betűkkel végeztettünk volna műveleteket.
+		</p>
+
+		<p>
+			A meséket úgy fogalmaztuk meg, hogy történeteik által a konkrétumok szintjére helyezzük azokat az absztrakt intellektuális folyamatokat, melyeknek a sikeres olvasástanítást feltétlenül kísérniük kell. A kis óvodások olyan nyelvi képességek birtokába kerülnek, melyek az iskolába lépve akkor is könnyedebbé teszik majd számukra a fonéma és a graféma elhelyezését az olvasás-írás logikai rácsán, ha oda bármiféle betűélmény nélkül érkeztek meg. Az emberi érzelmek fókuszba állításával pedig nem mellékesen a személyiségfejlődésre szeretnénk pozitívan hatni. Azzal, hogy beszélünk az érzelmeinkről, talán fel is szabadítjuk azokat, adott esetben pedig megtanuljuk kezelni is őket. A meséket igyekeztünk humorral átszőni.
+		</p>
+		
+		<p>		
+			A 2012-es év elején 7 terapeuta: Alkonyi Mónika, Skopp Laura, Ventilla Zsoltné a Budaörsi Logopédiai Intézet logopédusai, valamint Oros Éva, a társzerző Sándor Krisztina, Stánicz Nikolett és Szolnoki Péterné, a törökbálinti Egységes Pedagógiai Szakszolgálat fejlesztő pedagógusai kísérleti jelleggel mesélték diszlexia prevencióra szoruló gyermekeknek didaktus meséinket. Terveink szerint ősszel még több terapeutát léptetünk be a kísérleti rendszerbe, és megkezdjük az óvodai csoportokban történő, óvónő által végzett „Hangulatmesélést” is.
+		</p>
+
+		<p>
+			A magánhangzókat érzelmekhez kapcsoljuk. Ezeket az érzelmeket jelenítik meg a lufik. A lufik szeretett, kedves játékaink, ráadásul karakteres arckifejezést kapva rögtön fejjé tudnak válni.
+		</p>
+
+		<p>
+			Minden lufinak az érzelmeket egyszerűen, de egyértelműen kifejező arca van (az arcok piktogramszerűek, a későbbi játékok során a gyerekek is könnyen le tudják rajzolni őket).
+		</p>
+
+		<p>
+			Az arc rendkívül fontos eleme a száj, aminek a formája követi a lufi hangjának ajakartikulációját. Tehát egy lufi legalább 3-szoros megerősítése egy hangnak: a meghatározott színe, az arckifejezése és az ajakartikulációja, és természetesen a hozzá kapcsolódó érzelem által.
+		</p>
+
+		<div class="row">
+		  <div class="col-sm-2 offset2">
+		    <div class="thumbnail">
+		      <img style="display:block;margin:0 auto" src="{{ asset('bundles/zenezorejovodaiprogram/img/conception/lufi1.png') }}"/>
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-2">
+		    <div class="thumbnail">
+		      <img style="display:block;margin:0 auto" src="{{ asset('bundles/zenezorejovodaiprogram/img/conception/lufi2.png') }}"/>
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-2">
+		    <div class="thumbnail">
+		      <img style="display:block;margin:0 auto" src="{{ asset('bundles/zenezorejovodaiprogram/img/conception/lufi3.png') }}"/>
+		      <div class="caption">
+		        <h3>Thumbnail label</h3>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

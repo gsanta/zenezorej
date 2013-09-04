@@ -1,3 +1,7 @@
+zenezorej_ovodai_program:
+    resource: "@ZenezorejOvodaiProgramBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zenezorej_acknowledgements:
     resource: "@ZenezorejAcknowledgementsBundle/Resources/config/routing.yml"
     prefix:   /

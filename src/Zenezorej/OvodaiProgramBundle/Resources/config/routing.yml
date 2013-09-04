@@ -1,0 +1,3 @@
+ovodai_program_conception:
+    pattern:  /ovodai_program/koncepcio
+    defaults: { _controller: ZenezorejOvodaiProgramBundle:Default:index }

@@ -8,6 +8,20 @@ body {
 
 }
 
+h2 {
+	margin: 0.4em 0;
+	padding: 0;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+h3 {
+	margin: 0.4em 0;
+	padding: 0;
+	text-align: center;
+	font-size: 1.2em;
+}
+
 .row {
 	margin-right: 0;
 	margin-left: 0;
@@ -47,6 +61,7 @@ body {
 	text-align: center;
 	color: black;
 	font-weight: bold;
+	font-size: 0.8em;
 }
 
 .nav > li.first {
