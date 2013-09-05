@@ -1,0 +1,43 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#news-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="row main-content" id="first-page">
+	<div class="row-fluid" id="news-content">
+
+		{% for row in opinions %}
+        	<div class="col-lg-6 news-item">
+        		<div class="news-content">
+        			{% if row.date != null %}
+						{{ row.date|date("Y. M d.") }} <br>
+					{% endif %}
+					
+					{{ row.title }}
+				</div>
+			</div>
+    	{% endfor %}
+	</div>
+
+</div>
+
+{% endblock %}

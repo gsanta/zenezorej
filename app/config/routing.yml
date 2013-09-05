@@ -1,3 +1,7 @@
+zenezorej_guest_room:
+    resource: "@ZenezorejGuestRoomBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zenezorej_ovodai_program:
     resource: "@ZenezorejOvodaiProgramBundle/Resources/config/routing.yml"
     prefix:   /
