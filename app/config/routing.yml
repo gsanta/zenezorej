@@ -1,3 +1,11 @@
+zenezorej_security:
+    resource: "@ZenezorejSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
+zenezorej_connection:
+    resource: "@ZenezorejConnectionBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zenezorej_guest_room:
     resource: "@ZenezorejGuestRoomBundle/Resources/config/routing.yml"
     prefix:   /

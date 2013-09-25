@@ -10,8 +10,8 @@
 
         {% stylesheets  'bundles/zenezorejbase/css/bootstrap.min.css' 
                         'bundles/zenezorejbase/css/bootstrap-responsive.min.css'
-                        'bundles/zenezorejbase/css/lightbox.css'
                         'bundles/zenezorejbase/misc/shadowbox/shadowbox.css'
+                        'bundles/zenezorejbase/css/magnific-popup.css'
                         'bundles/zenezorejbase/css/common.css'
                                                     filter='cssrewrite' %}
 
@@ -41,7 +41,7 @@
           </li>
 				<li class="col-lg-1 eight"><a href="{{ path('events_homepage') }}">Rendezvények</a></li>
 				<li class="col-lg-1 ninth"><a href="{{ path('acknowledgements_homepage') }}">Köszönet</a></li>
-				<li class="col-lg-1 tenth"><a href="#">Kapcsolat</a></li>
+				<li class="col-lg-1 tenth"><a href="{{ path('connection_homepage') }}">Kapcsolat</a></li>
 			</ul>
 		</div>
 
@@ -53,8 +53,8 @@
 
 	  	<script src="http://code.jquery.com/jquery.js"></script>
 		  <script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
-	    <script src="{{ asset('bundles/zenezorejbase/js/lightbox-2.6.min.js') }}"></script>
-      <script src="{{ asset('bundles/zenezorejbase/misc/shadowbox/shadowbox.js') }}"></script>    
+      <script src="{{ asset('bundles/zenezorejbase/misc/shadowbox/shadowbox.js') }}"></script>
+      <script src="{{ asset('bundles/zenezorejbase/js/jquery.magnific-popup.min.js') }}"></script>    
       {% endblock %}
 	</body>  
 </html>  

@@ -1,0 +1,84 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#news-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+
+		#form-container {
+			max-width: 300px;
+			margin: 2em auto 0;
+			padding: 1em;
+			background: gray;
+		}
+
+		.white-popup {
+		  position: relative;
+		  background: #FFF;
+		  width: 300px;
+		  margin: 20px auto;
+		  padding: 1em;
+		}
+
+		.form-buttons {
+			margin-top: 1em;
+		}
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="row main-content">
+	<div class="row-fluid">
+		<div class="col-sm-4 offset1">
+			<button type="button" class="btn btn-default">Új téma létrehozása</button>
+			<a href="#test-popup" class="open-popup-link">Show inline popup</a>
+		</div>
+
+		<div class="col-sm-6">
+
+		</div>
+	
+		<div id="test-popup" class="white-popup mfp-hide">
+			<label for="topic-title">Cím&nbsp;</label><input id="topic-title" type="text" name="title"/>
+			<div class="form-buttons">
+				<button type="button" class="btn btn-default" id="forum-close">Megnyit</button>
+				<button type="button" class="btn btn-default" id="forum-close">Mégse</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	
+	<script type="text/javascript">
+
+		$('.open-popup-link').magnificPopup({
+		  type:'inline',
+		  midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+		  modal: true
+		});
+
+
+		$('#forum-close').click(function() {
+			$.magnificPopup.close();
+		})
+
+	</script>   
+{% endblock %}

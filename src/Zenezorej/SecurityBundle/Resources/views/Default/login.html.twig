@@ -1,0 +1,89 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#news-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+
+		#form-container {
+			max-width: 300px;
+			margin: 2em auto 0;
+			padding: 1em;
+			background: gray;
+		}
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="row main-content">
+	<div class="row-fluid">
+
+		<div class="container">
+			<div id="form-container">
+				<ul class="nav nav-tabs">
+				  <li><a href="#home" data-toggle="tab">Home</a></li>
+				  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+
+				</ul>
+
+				<div class="tab-content">
+				  <div class="tab-pane active" id="home">
+				  	<!--<form class="form-signin">
+				  		<h2 class="form-signin-heading">Bejelentkezés</h2>
+				  		<input type="text" class="input-block-level" placeholder="Email address"> 
+				  		<input type="password" class="input-block-level" placeholder="Password">
+				  		 <label class="checkbox">
+				  		 	<input type="checkbox" value="remember-me"> Remember me
+				  		 </label>
+				  		 <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+				  	</form>-->
+				  	{% if error %}
+					    <div>{{ error.message }}</div>
+					{% endif %}
+
+					 
+					<form action="{{ path('security_login_check') }}" method="POST">
+					    <label for="username">Username:</label>
+					 
+					    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+					    <label for="password">Password:</label>
+					    <input type="password" id="password" name="_password" />
+					 
+					    <input type="submit" name="login" />
+					</form>
+				  </div>
+				  <div class="tab-pane" id="profile">
+				  	<form class="form-signin">
+				  		<h2 class="form-signin-heading">Regisztráció</h2>
+				  		<input type="text" class="input-block-level" placeholder="Felhasználónév"> 
+				  		<input type="text" class="input-block-level" placeholder="Email">
+				  		<input type="password" class="input-block-level" placeholder="Jelszó">
+				  		<input type="password" class="input-block-level" placeholder="Jelszó újra">
+				  		<input type="password" class="input-block-level" placeholder="Regisztrációs kód">
+				  		<label class="checkbox">
+				  			<input type="checkbox" value="remember-me"> Remember me
+				  		</label>
+				  		<button class="btn btn-large btn-primary" type="submit">Regisztrálok</button>
+				  	</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

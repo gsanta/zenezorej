@@ -1,0 +1,7 @@
+parameters:
+#    zenezorej_connection.example.class: Zenezorej\ConnectionBundle\Example
+
+services:
+#    zenezorej_connection.example:
+#        class: %zenezorej_connection.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

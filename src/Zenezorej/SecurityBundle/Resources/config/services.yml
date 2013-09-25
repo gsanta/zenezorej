@@ -1,0 +1,7 @@
+parameters:
+#    zenezorej_security.example.class: Zenezorej\SecurityBundle\Example
+
+services:
+#    zenezorej_security.example:
+#        class: %zenezorej_security.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
