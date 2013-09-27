@@ -5,6 +5,7 @@ namespace Zenezorej\ConnectionBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Topic
@@ -24,6 +25,11 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      max = "25",
+     *      maxMessage = "A felhasználónév legfeljebb {{ limit }} karakter hosszú lehet"
+     * )
      * @ORM\Column(type="string", length=25, unique=true)
      */
     private $username;
@@ -34,11 +40,28 @@ class User implements UserInterface, \Serializable
     private $salt;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = "5",
+     *      max = "25",
+     *      minMessage = "A jelszó legyen legalább {{ limit }} karakter hosszú",
+     *      maxMessage = "A jeszó legfeljebb {{ limit }} karakter hosszú lehet"
+     * )
      * @ORM\Column(type="string", length=40)
      */
     private $password;
 
     /**
+     * 
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      max = "60",
+     *      maxMessage = "Az email legfeljebb {{ limit }} karakter hosszú lehet"
+     * )
+     * @Assert\Email(
+     *     message = "Hibás email cím",
+     *     checkMX = true
+     * )
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;

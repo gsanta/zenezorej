@@ -16,6 +16,14 @@
 			color: black;
 			
 		}
+
+		.my-item-container {
+			padding: 0 1em;
+		}
+
+		.panel {
+			border: 2px solid  #e87e8a;
+		}
  	</style>
 {% endblock %}
 
@@ -26,13 +34,16 @@
 	<div class="row-fluid" id="news-content">
 
 		{% for row in opinions %}
-        	<div class="col-lg-6 news-item">
-        		<div class="news-content">
-        			{% if row.date != null %}
-						{{ row.date|date("Y. M d.") }} <br>
-					{% endif %}
+
+			<div class="my-item-container col-lg-6">
+				<div class="panel panel-default ">
+					<div class="panel-body">
+				    	{% if row.date != null %}
+							{{ row.date|date("Y. M d.") }} <br>
+						{% endif %}
 					
-					{{ row.title }}
+						{{ row.title }}
+					</div>
 				</div>
 			</div>
     	{% endfor %}

@@ -39,6 +39,14 @@
 			font-weight: bold;
 			text-align: center;
 		}
+
+		.my-item-container {
+			padding: 0 1em;
+		}
+
+		.panel {
+			border: 2px solid  #8e2c77;
+		}
 	</style>
 	
 {% endblock %}
@@ -49,14 +57,16 @@
 	<div class="row-fluid" id="publications-content">
 
 		{% for row in publications %}
-        	<div class="col-sm-6 publication-item">
-        		<div class="publication-content">
-					<div class="highlight-center"> {{ row.authors }} </div>
-					<div> {{ row.title }} </div>
+			<div class="my-item-container col-lg-6">
+				<div class="panel panel-default ">
+					<div class="panel-heading">{{ row.authors }}</div>
+					<div class="panel-body">
+				    	<div> {{ row.title }} </div>
 
-					{% if row.publisher|trim != "" %}
-					    <div style="font-style:italic"> {{ row.publisher }} </div>
-					{% endif %}
+						{% if row.publisher|trim != "" %}
+						    <div style="font-style:italic"> {{ row.publisher }} </div>
+						{% endif %}
+					</div>
 				</div>
 			</div>
     	{% endfor %}

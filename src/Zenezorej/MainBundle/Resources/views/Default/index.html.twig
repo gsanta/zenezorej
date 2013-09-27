@@ -16,6 +16,14 @@
 			color: black;
 			
 		}
+
+		.my-item-container {
+			padding: 0 1em;
+		}
+
+		.panel {
+			border: 2px solid #045010;
+		}
  	</style>
 {% endblock %}
 
@@ -26,12 +34,15 @@
 	<div class="row-fluid" id="news-content">
 
 		{% for row in news %}
-        	<div class="col-lg-6 news-item">
-        		<div class="news-content">
-					{{ row.date|date("Y. M d.") }} <br>
-					{{ row.content }}
+		<div class="my-item-container col-lg-6">
+			<div class="panel panel-default ">
+				<div class="panel-heading">{{ row.date|date("Y. M d.") }}</div>
+				<div class="panel-body">
+			    	{{ row.content }}
+
 				</div>
 			</div>
+		</div>
     	{% endfor %}
 	</div>
 

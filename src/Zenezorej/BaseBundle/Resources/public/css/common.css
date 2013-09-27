@@ -40,7 +40,7 @@ h3 {
 	box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
 }
 
-.nav {
+.my-main-nav > .nav {
 	background: lightgrey;
 }
 
@@ -50,12 +50,12 @@ h3 {
 	box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
 }
 
-.nav li {
+.my-main-nav > .nav li {
 	padding: 0;
 
 }
 
-.nav > li > a {
+.my-main-nav > .nav > li > a {
 	margin: 0;
 	padding: 5px 0;
 	text-align: center;
@@ -64,47 +64,44 @@ h3 {
 	font-size: 0.8em;
 }
 
-.nav > li.first {
+.my-main-nav > .nav > li.first {
 	background: #045010;
 }
 
-.nav > li.second {
+.my-main-nav > .nav > li.second {
 	background: #00504f;
 }
 
-.nav > li.third {
+.my-main-nav > .nav > li.third {
 	background: #1692c8;
 }
 
-.nav > li.fourth {
+.my-main-nav > .nav > li.fourth {
 	background: #4a4a88;
 }
 
-.nav > li.fifth {
+.my-main-nav > .nav > li.fifth {
 	background: #8e2c77;
 }
 
-.nav > li.sixth {
+.my-main-nav > .nav > li.sixth {
 	background: #e87e8a;
 }
 
-.nav > li.seventh {
+.my-main-nav > .nav > li.seventh {
 	background: #c01935;
 }
 
-.nav > li.eigth {
+.my-main-nav > .nav > li.eigth {
 	background: #f95e5a;
 }
 
-.nav > li.ninth {
+.my-main-nav > .nav > li.ninth {
 	background: #dec522;
 }
 
-.nav > li.tenth {
+.my-main-nav > .nav > li.tenth {
 	background: #a91513;
-}
-
-#first-page {
 }
 
 .main-content {

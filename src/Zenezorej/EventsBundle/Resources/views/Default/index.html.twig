@@ -40,10 +40,12 @@
 	<div class="row-fluid" id="events-content">
 
 		{% for row in events %}
-        	<div class="col-sm-6 event-item">
-        		<div class="event-content">
-					<div> {{ row.startDate|date("Y. M d.") }} </div>
-					<div> {{ row.content|raw }} </div>
+			<div class="my-item-container col-lg-6">
+				<div class="panel panel-default ">
+					<div class="panel-heading">{{ row.startDate|date("Y. M d.") }}</div>
+					<div class="panel-body">
+				    	{{ row.content|raw }}
+					</div>
 				</div>
 			</div>
     	{% endfor %}
