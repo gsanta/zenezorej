@@ -27,18 +27,27 @@
   			<ul class="nav">
   				<li class="active col-lg-1 col-offset-1 first"><a href="{{ path('main_homepage') }}">Főoldal</a></li>
   				<li class="col-lg-1 second"><a href="{{ path('philosophy_homepage') }}">Filozófia</a></li>
-  				<li class="col-lg-1 third"><a href="{{ path('demo_homepage') }}">Demó</a></li>
+  				<li class="col-lg-1 dropdown third">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demó<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ path('demo_homepage') }}">Koncepció</a></li>
+              <li><a href="{{ path('demo_mesehosok') }}">Mesehősök</a></li>
+              <li><a href="#" target="_blank">Betűmesék (pdf)</a></li>
+              <li><a href="#">Hívóképek</a></li>
+              <li><a href="{{ asset('bundles/zenezorejdemo/misc/hangfestomesek.pdf') }}" target="_blank">Hangfestő mesék (pdf)</a></li>
+            </ul>
+          </li>
   				<li class="col-lg-1 fourth"><a href="{{ path('zorej_tv_homepage') }}">Zörej Tv</a></li>
   				<li class="col-lg-1 fifth"><a href="{{ path('publications_homepage') }}">Publikációk</a></li>
   				<li class="col-lg-1 sixth"><a href="{{ path('guest_room_homepage') }}">Vendégszoba</a></li>
-  				 <li class="col-lg-1 dropdown seventh">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Óvodai&nbsp;program<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="{{ path('ovodai_program_conception') }}">Koncepció</a></li>
-                <li><a href="{{ asset('bundles/zenezorejovodaiprogram/misc/DEMO_A_HANGULATMESEHEZ.pdf') }}" target="_blank">Demó a hangulatmeséhez (pdf)</a></li>
-                <li><a href="#">Bepillantás egy foglalkozásba</a></li>
-              </ul>
-            </li>
+  				<li class="col-lg-1 dropdown seventh">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Óvodai&nbsp;program<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{ path('ovodai_program_conception') }}">Koncepció</a></li>
+              <li><a href="{{ asset('bundles/zenezorejovodaiprogram/misc/DEMO_A_HANGULATMESEHEZ.pdf') }}" target="_blank">Demó a hangulatmeséhez (pdf)</a></li>
+              <li><a href="{{ path('ovodai_program_foglalkozas_demo') }}">Bepillantás egy foglalkozásba</a></li>
+            </ul>
+          </li>
   				<li class="col-lg-1 eight"><a href="{{ path('events_homepage') }}">Rendezvények</a></li>
   				<li class="col-lg-1 ninth"><a href="{{ path('acknowledgements_homepage') }}">Köszönet</a></li>
   				<li class="col-lg-1 tenth"><a href="{{ path('connection_homepage') }}">Kapcsolat</a></li>

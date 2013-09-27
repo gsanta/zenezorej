@@ -1,3 +1,7 @@
 ovodai_program_conception:
     pattern:  /ovodai_program/koncepcio
     defaults: { _controller: ZenezorejOvodaiProgramBundle:Default:index }
+
+ovodai_program_foglalkozas_demo:
+    pattern:  /ovodai_program/foglalkozas_demo
+    defaults: { _controller: ZenezorejOvodaiProgramBundle:Default:foglalkozasDemo }

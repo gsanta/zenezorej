@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('ZenezorejOvodaiProgramBundle:Default:index.html.twig');
     }
+
+    public function foglalkozasDemoAction() {
+    	return $this->render('ZenezorejOvodaiProgramBundle:Default:foglalkozas_demo.html.twig');
+    }
 }
