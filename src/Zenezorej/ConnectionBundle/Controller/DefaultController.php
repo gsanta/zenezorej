@@ -4,6 +4,7 @@ namespace Zenezorej\ConnectionBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Zenezorej\ConnectionBundle\Entity\Topic;
+use Zenezorej\ConnectionBundle\Entity\Message;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -16,7 +17,6 @@ class DefaultController extends Controller
 
         $topicForm = $this->createFormBuilder($topic)
             ->add('name', 'text')
-            ->add('save', 'submit')
             ->getForm();
 
         $topicForm->handleRequest($request);
@@ -30,7 +30,30 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($topic);
             $em->flush();
-            return $this->redirect($this->generateUrl('connection_homepage'));
+            return $this->redirect($this->generateUrl('connection_homepage', array('topicId' => $topic->getId())));
+        }
+
+        $message = new Message();
+
+        $messageForm = $this->createFormBuilder($message)
+            ->add('content','textarea')
+            ->getForm();
+
+        $messageForm->handleRequest($request);
+
+        if ($messageForm->isValid() && $topicId > -1) {
+            
+            $usr= $this->get('security.context')->getToken()->getUser();
+            $topic = $this->getTopicById($topicId);
+
+            $message->setUser($usr);
+            $message->setTopic($topic);
+            $message->setDate(new \DateTime());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($message);
+            $em->flush();
+            return $this->redirect($this->generateUrl('connection_homepage', array('topicId' => $topicId)));
         }
 
         $topicRepository = $this->getDoctrine()->getRepository('ZenezorejConnectionBundle:Topic');
@@ -43,12 +66,19 @@ class DefaultController extends Controller
             $messages = $this->fetchAllMessagesByTopicId($topicId);
         }
 
-        return $this->render('ZenezorejConnectionBundle:Default:index.html.twig',array('topicForm' => $topicForm->createView(), 'topics' => $topics, 'messages' => $messages));
+        return $this->render('ZenezorejConnectionBundle:Default:index.html.twig',array('topicForm' => $topicForm->createView(),
+            'messageForm' => $messageForm->createView(), 'topics' => $topics, 'messages' => $messages));
+    }
+
+    private function getTopicById($topicId) {
+        $topicRepository = $this->getDoctrine()->getRepository('ZenezorejConnectionBundle:Topic');
+        $topic = $topicRepository->find($topicId);
+
+        return $topic;
     }
 
     private function fetchAllMessagesByTopicId($topicId) {
-        $topicRepository = $this->getDoctrine()->getRepository('ZenezorejConnectionBundle:Topic');
-        $topic = $topicRepository->find($topicId);
+        $topic = $this->getTopicById($topicId);
 
         $messageRepository = $this->getDoctrine()->getRepository('ZenezorejConnectionBundle:Message');
         $messages = $messageRepository->findByTopic($topic);
