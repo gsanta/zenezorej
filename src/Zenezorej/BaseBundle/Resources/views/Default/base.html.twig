@@ -1,10 +1,11 @@
 <!DOCTYPE html>  
 <html>  
-	<head>  
-    	<title>Zenezörej</title>  
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-    	<!-- Bootstrap -->  
+  <head>  
+      <title>Zenezörej</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="content-type" content="text/html;charset=utf-8">
+      <!-- Bootstrap -->  
+      <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.css">
 
       {% block stylesheets %}
 
@@ -19,28 +20,28 @@
             
         {% endstylesheets %}
       {% endblock %}
-    	
-	</head>  
-  	<body>  
+      
+  </head>  
+    <body>  
 
-    	<div class="row nav-row my-main-nav" >
-  			<ul class="nav">
-  				<li class="active col-lg-1 col-offset-1 first"><a href="{{ path('main_homepage') }}">Főoldal</a></li>
-  				<li class="col-lg-1 second"><a href="{{ path('philosophy_homepage') }}">Filozófia</a></li>
-  				<li class="col-lg-1 dropdown third">
+      <div class="row nav-row my-main-nav" >
+        <ul class="nav">
+          <li class="active col-lg-1 col-offset-1 first"><a href="{{ path('main_homepage') }}">Főoldal</a></li>
+          <li class="col-lg-1 second"><a href="{{ path('philosophy_homepage') }}">Filozófia</a></li>
+          <li class="col-lg-1 dropdown third">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demó<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{{ path('demo_homepage') }}">Koncepció</a></li>
               <li><a href="{{ path('demo_mesehosok') }}">Mesehősök</a></li>
               <li><a href="#" target="_blank">Betűmesék (pdf)</a></li>
               <li><a href="#">Hívóképek</a></li>
-              <li><a href="{{ asset('bundles/zenezorejdemo/misc/hangfestomesek.pdf') }}" target="_blank">Hangfestő mesék (pdf)</a></li>
+              <li><a href="{{ asset('bundles/zenezorejuserpages/misc/hangfestomesek.pdf') }}" target="_blank">Hangfestő mesék (pdf)</a></li>
             </ul>
           </li>
-  				<li class="col-lg-1 fourth"><a href="{{ path('zorej_tv_homepage') }}">Zörej Tv</a></li>
-  				<li class="col-lg-1 fifth"><a href="{{ path('publications_homepage') }}">Publikációk</a></li>
-  				<li class="col-lg-1 sixth"><a href="{{ path('guest_room_homepage') }}">Vendégszoba</a></li>
-  				<li class="col-lg-1 dropdown seventh">
+          <li class="col-lg-1 fourth"><a href="{{ path('zorej_tv_homepage') }}">Zörej Tv</a></li>
+          <li class="col-lg-1 fifth"><a href="{{ path('publications_homepage') }}">Publikációk</a></li>
+          <li class="col-lg-1 sixth"><a href="{{ path('guest_room_homepage') }}">Vendégszoba</a></li>
+          <li class="col-lg-1 dropdown seventh">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Óvodai&nbsp;program<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="{{ path('ovodai_program_conception') }}">Koncepció</a></li>
@@ -48,22 +49,28 @@
               <li><a href="{{ path('ovodai_program_foglalkozas_demo') }}">Bepillantás egy foglalkozásba</a></li>
             </ul>
           </li>
-  				<li class="col-lg-1 eight"><a href="{{ path('events_homepage') }}">Rendezvények</a></li>
-  				<li class="col-lg-1 ninth"><a href="{{ path('acknowledgements_homepage') }}">Köszönet</a></li>
-  				<li class="col-lg-1 tenth"><a href="{{ path('connection_homepage') }}">Kapcsolat</a></li>
-  			</ul>
-  		</div>
+          <li class="col-lg-1 eight"><a href="{{ path('events_homepage') }}">Rendezvények</a></li>
+          <li class="col-lg-1 ninth"><a href="{{ path('acknowledgements_homepage') }}">Köszönet</a></li>
+          <li class="col-lg-1 tenth"><a href="{{ path('connection_homepage') }}">Kapcsolat</a></li>
+        </ul>
+      </div>
 
-  		{% block body %}
+      {% block body %}
 
-  		{% endblock %}
+      {% endblock %}
 
       {% block javascripts %}
 
-	  	<script src="http://code.jquery.com/jquery.js"></script>
-		  <script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
       <script src="{{ asset('bundles/zenezorejbase/misc/shadowbox/shadowbox.js') }}"></script>
-      <script src="{{ asset('bundles/zenezorejbase/js/jquery.magnific-popup.min.js') }}"></script>    
+      <script src="{{ asset('bundles/zenezorejbase/js/jquery.magnific-popup.min.js') }}"></script>   
+      <script src="{{ asset('bundles/zenezorejbase/js/jquery.flip.js') }}"></script>
+
+      <script src="{{ asset('bundles/zenezorejbase/js/masonry.min.js') }}"></script>
+      <script src="{{ asset('bundles/zenezorejbase/js/isotope.min.js') }}"></script>
+      <script src="{{ asset('bundles/zenezorejbase/js/imagesloaded.min.js') }}"></script>
+      <script src="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js"></script>
       {% endblock %}
-	</body>  
+  </body>  
 </html>  
