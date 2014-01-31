@@ -1,0 +1,40 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.news-item {
+			color: black;
+			
+		}
+ 	</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="hero-unit">
+		<h2 style="margin-top:1em">Demó</h2>
+		<p>Módszerünk lényegébe szeretnénk bepillantást engedni.</p>
+		<p>A betűtanításhoz használt hívóképeket olyan – a szakmaiság alapján több szempontot is figyelembe vevő – hívómesékre cseréltük, melyek laza szálon, mitologikus szerkesztési analógia alapján egymással kapcsolatban vannak. Ezáltal egy folyton változó, mégis biztonságot adóan ismerős történetiség fűződik a betűkhöz, melyek így szinte személyiséggel rendelkeznek, és szerethetővé válnak.</p>
+		<p>A mesék nem elhanyagolható sajátossága még, hogy zenezörejjel adjuk elő. Mit nevezünk zenezörejnek? Az egyszerű hangszerek, ill. a fizikai világ hangjait, melyek önmagukban, de még inkább verbális kontextusban katarzis létrehozására alkalmasak, ám zenei előképzettséget sem a pedagógustól sem a gyermektől nem igényelnek.</p>
+		<p>A döntően képi világon felcseperedő gyermeknek tehát ellenpólusként adjuk oda a hallgatott mesét, melyekbe figyelemfelhívó hangimpulzusokat építünk. A mesék ezáltal alkalmasak lesznek arra, hogy mind a tanítási órán, mind az egyéb iskolai tevékenységek során továbbélhetők legyenek. A továbbélés általunk megfogalmazott lehetőségeinek kiaknázása pedig egyfelől tovább ringatja a gyermeket a betűtanítás történetiségében, másfelől szorongásoldó, feszültség levezető és pihentető funkciója is van.</p>
+		<p>A mesék megírásával az volt a célunk, hogy emocionális hidat hozzunk létre a gyermek és a betű között. Elérve azt, hogy a betűket a gyermekek ne csak tanulják, hanem a mesék segítségével „megéljék”, és tulajdonképpen egy önkéntelen tanulási folyamatban elsajátítsák az olvasást.</p>
+		<p>Ízelítőnkben az alábbi menüpontok találhatók:</p>
+		<a href="{{ path('demo_mesehosok') }}">Mesehősök </a>
+		<a type="button" class="btn">Betűmesék </a>
+		<a type="button" class="btn">Hívóképek </a>
+		<a type="button" class="btn">Hangfestő mesék </a>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,3 +1,0 @@
-acknowledgements_homepage:
-    pattern:  /koszonet
-    defaults: { _controller: ZenezorejAcknowledgementsBundle:Default:index }

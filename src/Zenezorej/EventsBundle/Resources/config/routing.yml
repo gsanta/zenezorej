@@ -1,3 +1,0 @@
-events_homepage:
-    pattern:  /rendezvenyek
-    defaults: { _controller: ZenezorejEventsBundle:Default:index }

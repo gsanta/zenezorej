@@ -1,7 +1,0 @@
-parameters:
-#    zenezorej_ovodai_program.example.class: Zenezorej\OvodaiProgramBundle\Example
-
-services:
-#    zenezorej_ovodai_program.example:
-#        class: %zenezorej_ovodai_program.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

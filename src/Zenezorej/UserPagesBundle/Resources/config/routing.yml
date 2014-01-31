@@ -1,0 +1,48 @@
+zorej_tv_homepage:
+    pattern:  /zorejtv
+    defaults: { _controller: ZenezorejUserPagesBundle:Channel:index }
+
+demo_homepage:
+    pattern:  /demo
+    defaults: { _controller: ZenezorejUserPagesBundle:Demo:index }
+
+demo_mesehosok:
+    pattern:  /demo/mesehosok
+    defaults: { _controller: ZenezorejUserPagesBundle:Demo:mesehosok }
+
+acknowledgements_homepage:
+    pattern:  /koszonet
+    defaults: { _controller: ZenezorejUserPagesBundle:Acknowledgements:index }
+
+connection_homepage:
+    pattern:  /kapcsolat
+    defaults: { _controller: ZenezorejUserPagesBundle:Connection:index }
+
+events_homepage:
+    pattern:  /rendezvenyek
+    defaults: { _controller: ZenezorejUserPagesBundle:Events:index }
+
+guest_room_homepage:
+    pattern:  /vendegszoba
+    defaults: { _controller: ZenezorejUserPagesBundle:GuestRoom:index }
+
+ovodai_program_conception:
+    pattern:  /ovodai_program/koncepcio
+    defaults: { _controller: ZenezorejUserPagesBundle:NurseryProgram:index }
+
+ovodai_program_foglalkozas_demo:
+    pattern:  /ovodai_program/foglalkozas_demo
+    defaults: { _controller: ZenezorejUserPagesBundle:NurseryProgram:foglalkozasDemo }
+
+philosophy_homepage:
+    pattern:  /filozofia
+    defaults: { _controller: ZenezorejUserPagesBundle:Philosophy:index }
+
+publications_homepage:
+    pattern:  /publikaciok
+    defaults: { _controller: ZenezorejUserPagesBundle:Publication:index }
+
+main_homepage:
+    pattern:  /
+    defaults: { _controller: ZenezorejUserPagesBundle:Main:index }
+

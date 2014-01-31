@@ -1,7 +1,0 @@
-demo_homepage:
-    pattern:  /demo
-    defaults: { _controller: ZenezorejDemoBundle:Default:index }
-
-demo_mesehosok:
-    pattern:  /demo/mesehosok
-    defaults: { _controller: ZenezorejDemoBundle:Default:mesehosok }

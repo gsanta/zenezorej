@@ -1,3 +1,0 @@
-philosophy_homepage:
-    pattern:  /filozofia
-    defaults: { _controller: ZenezorejPhilosophyBundle:Default:index }

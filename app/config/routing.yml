@@ -1,45 +1,5 @@
-zenezorej_security:
-    resource: "@ZenezorejSecurityBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_connection:
-    resource: "@ZenezorejConnectionBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_guest_room:
-    resource: "@ZenezorejGuestRoomBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_ovodai_program:
-    resource: "@ZenezorejOvodaiProgramBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_acknowledgements:
-    resource: "@ZenezorejAcknowledgementsBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_publications:
-    resource: "@ZenezorejPublicationsBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_events:
-    resource: "@ZenezorejEventsBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_zorej_tv:
-    resource: "@ZenezorejZorejTvBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_demo:
-    resource: "@ZenezorejDemoBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_philosophy:
-    resource: "@ZenezorejPhilosophyBundle/Resources/config/routing.yml"
-    prefix:   /
-
-zenezorej_main:
-    resource: "@ZenezorejMainBundle/Resources/config/routing.yml"
+zenezorej_user_pages:
+    resource: "@ZenezorejUserPagesBundle/Resources/config/routing.yml"
     prefix:   /
 
 zenezorej_base:

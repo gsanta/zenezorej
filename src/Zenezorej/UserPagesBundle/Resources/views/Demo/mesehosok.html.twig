@@ -1,0 +1,398 @@
+{% extends 'ZenezorejBaseBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	
+	<style>
+
+		#main-content {
+
+			padding: 1em;
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+
+		.item-mesehos {
+			color: black;
+			margin: 10px;
+			height: 220px;
+			width: 220px;
+			padding: 0;
+			background: #AD855C;
+			-webkit-box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
+			box-shadow: 5px 5px 5px 2px rgba(50, 50, 50, 0.6);
+		}
+
+		.thumbnail-mesehos {
+			display:block;
+			float:right;
+		}
+
+		table {
+
+		}
+
+		td:last-child {
+			text-align: right;
+			padding-right: 10px;
+		}
+
+		td:first-child {
+			text-align: left;
+		}
+
+		td {
+			height: 70px;
+		}
+
+		tr {
+			border-bottom: 2px solid black;
+		}
+
+		#content-mesehosok {
+
+			padding: 1em;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.item-name {
+			align: center;
+			font-weight: bold;
+			font-size: 1.2em;
+			padding: 5px;
+		}
+ 	</style>
+
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		Shadowbox.init();
+
+		$(".flipbox").click( function() {
+			var that = this;
+			$(this).flip({
+				direction:'tb',
+				speed: 100,
+
+				onEnd: function() {
+					$("div",that).toggle();
+
+					$(that).css({
+						background: "#AD855C"
+					})
+				}
+			})
+		} )
+
+		$(function() {
+		// VERTICALLY ALIGN FUNCTION
+		$.fn.vAlign = function() {
+			return this.each(function(i){
+			var ah = $(this).height();
+			var ph = $(this).parents('.flipbox').height();
+			console.log("ah: " + ah + " ph: " + ph)
+			var mh = Math.ceil((ph-ah) / 2);
+			$(this).css('margin-top', mh);
+			});
+		};
+
+		$('.item-thumbnail').vAlign();
+
+		})
+		
+	</script>
+{% endblock %}
+
+{% block body %}
+
+<div class="row" id="main-content">
+	<div class="row-fluid">
+		<p>
+			Bemutatjuk a mássalhangzók tanításához életrehívott mesehősöket, 3 mese teljes szövegével (a gyermekrajzokat a Herman Ottó Általános Iskola tanulói készítették).
+
+			<div class="row" id="content-mesehosok">
+
+
+				{% for src,name in figures %}
+					<div class="col-sm-5 item-mesehos flipbox" >
+							<div class="item-name" style="display:none">{{ name }}</div>
+							
+							{% if src != "blank" %}
+							<div>
+								<img class="item-thumbnail" style="margin: 0 auto; display: block; max-width:200px; max-height: 200px" src="{{ asset( src ) }}"/>
+							</div>
+							{% else %}
+							<div class="item-name">{{ name }}</div>
+							{% endif %}
+					</div>
+			    {% endfor %}
+
+				{#<div class="col-sm-5 item-mesehos" id="flipbox">
+						<div style="display:none">Medve Ede, Sihu Huba, Au Tóni (m,s,t)</div>
+						
+						<div>
+							<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Medve Ede, Sihu Huba, Au Tóni (m,s,t)">
+								<img style="" src="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst.jpg') }}"/>
+							</a>
+						</div>
+				</div>
+
+				<div class="col-sm-5 offset1 item-mesehos">
+						Vau Vali (v)
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/v_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Vau Vali (v)">
+							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/v.jpg') }}"/>
+						</a>
+				</div>
+
+				<div class="col-sm-5 item-mesehos">
+						Pipa Pista (p)
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/p_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Pipa Pista (p)">
+							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/p.jpg') }}"/>
+						</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Cincin Vezér (c)
+						<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/c_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Cincin Vezér (c)">
+							<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/c.jpg') }}"/>
+						</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Kakas Lovag (k)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/k_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Kakas Lovag (k)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/k.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Lágy Szellő (f)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/f_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Lágy Szellő (f)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/f.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Meleg Lehelet (h)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/h_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Meleg Lehelet (h)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/h.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Zim Züm (z)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/z_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Zim Züm (z)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/z.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Dr. Dibi Dob (d)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/d_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Dr. Dibi Dob (d)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/d.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Pinokkió (j)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/j_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Pinokkió (j)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/j.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Nénó Zénó (n)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/n_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Nénó Zénó (n)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/n.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Kígyó Sziszi (sz)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Kígyó Sziszi (sz)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Gág Ági (g)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/g_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Gág Ági (g)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/g.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Moto Rozi (r)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/r_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Moto Rozi (r)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/r.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Bubo Réka (b)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/b_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Bubo Réka (b)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/b.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Gy, a hintapaci (gy) 
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Gy, a hintapaci (gy)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						Csibe Csabi (cs)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Csibe Csabi (cs)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+						Nyau Cili (ny)
+					<a class="thumbnail-mesehos" href="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny_big.jpg') }}" rel="shadowbox[Mesehosok]" title="Nyau Cili (ny)">
+						<img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny.jpg') }}"/>
+					</a>
+				</div>
+				<div class="col-sm-5 item-mesehos">
+					
+					Zsupszi, a tanuszi (zs)
+					
+				</div>
+				<div class="col-sm-5 offset1 item-mesehos">
+					
+					Tyúk Olga (ty)
+					
+				</div>
+				<div class="col-sm-5 item-mesehos">
+						
+					Zokni Zoli (ly)
+					
+				</div>#}
+				<!--<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Medve Ede (m,s,t)
+							Sihu Huba
+							Au Tóni
+						</td>
+						<td><img style="" src="{{ asset('bundles/zenezorejdemo/img/mesehosok/mst2.jpg') }}"/></td>
+					</tr>
+				</table>
+				
+			
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Vau Vali (v)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/v.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Pipa Pista (p)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/p.jpg') }}"/></td>
+					</td>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Cincin Vezér (c)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/c.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Kakas Lovag (k)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/k.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Lágy Szellő (f)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/f.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Meleg Lehelet (h)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/h.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Zim Züm (z)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/z.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Dr. Dibi Dob (d)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/d.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Pinokkió (j)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/j.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Nénó Zénó (n)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/n.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>	
+						<td>Kígyó Sziszi (sz)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/sz.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Gág Ági (g)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/g.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Moto Rozi (r)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/r.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Bubo Réka (b)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/b.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Gy, a hintapaci (gy) </td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/gy.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Csibe Csabi (cs)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/cs.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td>Nyau Cili (ny)</td>
+						<td><img src="{{ asset('bundles/zenezorejdemo/img/mesehosok/ny.jpg') }}"/></td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td colspan="2">Zsupszi, a tanuszi (zs)</td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>
+						<td colspan="2">Tyúk Olga (ty)</td>
+					</tr>
+				</table>
+				<table class="col-sm-6 item-mesehos">
+					<tr>	
+						<td colspan="2">Zokni Zoli (ly)</td>
+					</tr>
+				</table>-->
+			</div>
+		</p>
+	</div>
+</div>
+
+{% endblock %}

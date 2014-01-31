@@ -1,3 +1,0 @@
-guest_room_homepage:
-    pattern:  /vendegszoba
-    defaults: { _controller: ZenezorejGuestRoomBundle:Default:index }
