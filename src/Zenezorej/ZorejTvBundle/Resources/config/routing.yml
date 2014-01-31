@@ -1,3 +1,0 @@
-zorej_tv_homepage:
-    pattern:  /zorejtv
-    defaults: { _controller: ZenezorejZorejTvBundle:Default:index }

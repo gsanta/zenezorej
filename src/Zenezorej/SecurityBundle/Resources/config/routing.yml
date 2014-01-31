@@ -1,6 +1,0 @@
-security_login:
-    pattern:  /kapcsolat/login
-    defaults: { _controller: ZenezorejSecurityBundle:Default:login }
-
-security_login_check:
-    pattern:   /kapcsolat/login_check
