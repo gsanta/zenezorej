@@ -1,0 +1,11 @@
+zenezorej_admin_pages_homepage:
+    pattern:  /admin
+    defaults: { _controller: ZenezorejAdminPagesBundle:Default:index }
+
+zenezorej_admin_pages_news:
+    pattern:  /admin/news
+    defaults: { _controller: ZenezorejAdminPagesBundle:News:index }
+
+zenezorej_admin_pages_news_delete:
+    pattern:  /admin/news/delete/{id}
+    defaults: { _controller: ZenezorejAdminPagesBundle:News:delete }
