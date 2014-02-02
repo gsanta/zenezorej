@@ -9,3 +9,29 @@ zenezorej_admin_pages_news:
 zenezorej_admin_pages_news_delete:
     pattern:  /admin/news/delete/{id}
     defaults: { _controller: ZenezorejAdminPagesBundle:News:delete }
+
+zenezorej_admin_pages_news_new:
+    pattern:  /admin/news/new
+    defaults: { _controller: ZenezorejAdminPagesBundle:News:new }
+
+zenezorej_admin_pages_events:
+    pattern:  /admin/events
+    defaults: { _controller: ZenezorejAdminPagesBundle:Events:index }
+
+zenezorej_admin_pages_events_delete:
+    pattern:  /admin/events/delete/{id}
+    defaults: { _controller: ZenezorejAdminPagesBundle:Events:delete }
+
+zenezorej_admin_pages_events_new:
+    pattern:  /admin/events/new
+    defaults: { _controller: ZenezorejAdminPagesBundle:Events:new }
+
+login:
+    path:     /login
+    defaults: { _controller: ZenezorejAdminPagesBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout

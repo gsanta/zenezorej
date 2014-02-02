@@ -20,37 +20,34 @@
       	html, body {
       		margin: 0;
       	}
+
+      	#logout {
+      		margin-top: 5px;
+      		float: right;
+      	}
       </style>
   </head>  
     <body>  
-
-      {#<div class="row nav-row my-main-nav" >
-      	 <div class="col-lg-6 col-offset-3">
-      		<div class="row" >
-	        <ul class="nav">
-	          <li class="col-lg-1"><a href="{{ path('zenezorej_admin_pages_news') }}">Hírek</a></li>
-	          <li class="col-lg-1"><a href="#">Rendezvények</a></li>
-	          <li class="col-lg-1"><a href="#">Publikációk</a></li>
-
-	        </ul>
-	    	</div>
-    	</div> 
-    	<ul class="nav nav-pills">
-		  <li class="active"><a href="#">Home</a></li>
-		  <li><a href="#">Profile</a></li>
-		  <li><a href="#">Messages</a></li>
-		</ul>
-      </div>#}
 
 <nav class="navbar navbar-default" role="navigation">
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ path('zenezorej_admin_pages_news') }}">Hírek</a></li>
-        <li><a href="#">Rendezvények</a></li>
+        <li {% if currentPage|default('news') == "news" %} class="active" {% endif %}>
+        	<a href="{{ path('zenezorej_admin_pages_news') }}">Hírek</a>
+        </li>
+        <li {% if currentPage|default('news') == "events" %} class="active" {% endif %}>
+        	<a href="{{ path('zenezorej_admin_pages_events') }}">Rendezvények</a>
+        </li>
         <li><a href="#">Publikációk</b></a></li>
       </ul>
+
+      {% if app.user %}
+      <div id="logout">
+    	<a class="btn btn-default" href="{{ path('logout') }}#home">Kijelentkezés</a>
+      </div>
+      {% endif %}
     <!-- </div> -->
 </nav>
 
@@ -62,7 +59,9 @@
 
       <script src="http://code.jquery.com/jquery.js"></script>
       <script src="{{ asset('bundles/zenezorejbase/js/bootstrap.min.js') }}"></script>  
+      <script src="{{ asset('bundles/zenezorejadminpages/js/bootbox.min.js') }}"></script>  
       <script src="{{ asset('bundles/zenezorejadminpages/js/common.js') }}"></script>  
+      <script src="{{ asset('bundles/zenezorejadminpages/js/ckeditor/ckeditor.js') }}"></script>
 
       {% endblock %}
   </body>  

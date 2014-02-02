@@ -5,16 +5,16 @@ namespace Zenezorej\AdminPagesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Zenezorej\UserPagesBundle\Entity\News;
+use Zenezorej\UserPagesBundle\Entity\Events;
 
-class NewsController extends Controller
+class EventsController extends Controller
 {
     public function indexAction(Request $request)
     {
 
-    	$actNews = new News();
+    	$event = new Events();
 
-    	$form = $this->createFormBuilder( $actNews )
+    	$form = $this->createFormBuilder( $event )
     		->add('content', 'textarea')
     		->add('save', 'submit')
         	->getForm();
@@ -22,20 +22,20 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
     	if( $form->isValid() ) {
-    		$actNews->setDate( new \DateTime() );
-    		$actNews->setDeleted( false );
+    		//$actNews->setDate( new \DateTime() );
+    		//$actNews->setDeleted( false );
 
     		$em = $this->getDoctrine()->getManager();
 		    $em->persist($actNews);
 		    $em->flush();
 
-        	return $this->redirect($this->generateUrl('zenezorej_admin_pages_news'));
+        	return $this->redirect($this->generateUrl('zenezorej_admin_pages_events'));
     	}
 
-    	$allNews = $this->fetchAllNews();
+    	$events = $this->fetchAllEvents();
 
-        return $this->render('ZenezorejAdminPagesBundle:News:index.html.twig', array( 
-        	"news" => $allNews,
+        return $this->render('ZenezorejAdminPagesBundle:Events:index.html.twig', array( 
+        	"events" => $events,
         	"form" =>  $form->createView()
         ) );
     }
@@ -76,12 +76,12 @@ class NewsController extends Controller
         ));
     }
 
-    private function fetchAllNews() {
+    private function fetchAllEvents() {
 
-	    $news = $this->getDoctrine()
-	        ->getRepository('ZenezorejUserPagesBundle:News')
+	    $events = $this->getDoctrine()
+	        ->getRepository('ZenezorejUserPagesBundle:Events')
 	        ->findAll();
 
-	    return $news;
+	    return $events;
 	}
 }
